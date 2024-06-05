@@ -130,7 +130,7 @@ def main(
         for repo in map_repo_version_to_predictions:
             for version in map_repo_version_to_predictions[repo]:
                 # Create model/repo/version specific testbed folder
-                testbed_model_name = model
+                testbed_model_name = model.split('/')[-1].replace(':', '_')
                 if len(testbed_model_name) > 50:
                     # Hash model name for temp_dir path if too long
                     # Issue: https://github.com/conda/conda/issues/12250
